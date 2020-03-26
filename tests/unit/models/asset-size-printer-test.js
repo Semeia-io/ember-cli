@@ -52,7 +52,7 @@ describe('models/asset-size-printer', function() {
   });
 
   afterEach(function() {
-    return Promise.all([remove(storedTmpDir)]);
+    await fs.remove(storedTmpDir);
   });
 
   it('prints human-readable file sizes (including gzipped sizes) of css and js files in the output path', async function() {
